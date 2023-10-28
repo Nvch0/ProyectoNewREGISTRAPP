@@ -1,4 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { User } from 'src/app/models/user.model';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { UtilsService } from 'src/app/services/utils.service';
 import { AddUpdateProductComponent } from 'src/app/shared/components/add-update-product/add-update-product.component';
@@ -15,6 +16,11 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
   }
+
+  user(): User{
+    return this.utilsSvc.getFromLocalStorage('user')
+  }
+
 
   //=======Cerrar Sesion==========
 
