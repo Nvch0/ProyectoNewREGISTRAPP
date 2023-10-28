@@ -11,7 +11,7 @@ import { AddUpdateProductComponent } from 'src/app/shared/components/add-update-
 export class HomePage implements OnInit {
 
   firebaseSvc = inject(FirebaseService);
-  utilsSvc = inject(UtilsService)
+  utilsSvc = inject(UtilsService);
 
   ngOnInit() {
   }
