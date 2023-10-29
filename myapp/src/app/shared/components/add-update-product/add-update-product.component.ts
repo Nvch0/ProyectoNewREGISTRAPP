@@ -1,4 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
 import { FirebaseService } from 'src/app/services/firebase.service';
@@ -10,9 +11,8 @@ import { UtilsService } from 'src/app/services/utils.service';
   styleUrls: ['./add-update-product.component.scss'],
 })
 export class AddUpdateProductComponent  implements OnInit {
-
   form = new FormGroup({
-    rut: new FormControl (''),
+    id: new FormControl (''),
     name: new FormControl('', [Validators.required, Validators.minLength(4)]),
     asignatura: new FormControl('', [Validators.required, Validators.minLength(4)]),
     fecha: new FormControl('', [Validators.required, Validators.min(0)]),
@@ -20,10 +20,16 @@ export class AddUpdateProductComponent  implements OnInit {
 
 
   firebaseSvc = inject(FirebaseService);
-  utilsSvc = inject(UtilsService)
+  utilsSvc = inject(UtilsService);
+
+  constructor (private router: Router){}
 
 
   ngOnInit() {
+  }
+
+  goToHome(){
+    this.router.navigate(['/profesorqr']);
   }
 
 
