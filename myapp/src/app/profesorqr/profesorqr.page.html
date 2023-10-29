@@ -1,17 +1,11 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Generador de QR</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content [fullscreen]="true">
+<app-header Title="Registro"></app-header>
+<ion-content>
 
-  <ion-text color="primary">
-    <h1>Generador de QR</h1>
-  </ion-text>
+      <input type="text" [(ngModel)]="texto">
+      <br><br>
+      <ion-header class="center">
+      <qrcode [qrdata]="texto" [width]="310"></qrcode>
+  </ion-header>
 
-  <input type="text" [(ngModel)]="texto">
-  <br><br>
-  <qrcode [qrdata]="texto" [width]="400"></qrcode>
-
-
+  <ion-button expand="full" color="primary" [routerLink]="['/main/home']">Finalizar</ion-button>
 </ion-content>
