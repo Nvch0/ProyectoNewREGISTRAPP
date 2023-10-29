@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profesorqr.page.scss'],
 })
 export class ProfesorqrPage implements OnInit {
+  texto: any;
 
   constructor() { }
 
