@@ -61,6 +61,40 @@ export class AddUpdateProductComponent  implements OnInit {
     }
 
   }
+
+  async asis() {
+    if (this.form.valid){
+
+      const loading = await this.utilsSvc.loading();
+      await loading.present();
+
+
+      this.firebaseSvc.signUp(this.form.value as User).then(async res => {
+
+
+        await this.firebaseSvc.updateUser(this.form.value.name)
+
+
+
+      }).catch (error => {
+        console.log(error);
+
+        this.utilsSvc.presentToast({
+          message: error.message,
+          duration: 2500,
+          color: 'primary',
+          position: 'middle',
+          icon: 'alert-circle-outline'
+        })
+
+      }).finally(() => {
+        loading.dismiss();
+
+      })
+
+    }
+
+  }
 }
 
 
