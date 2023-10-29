@@ -25,6 +25,10 @@ const routes: Routes = [
     path: 'profesorqr',
     loadChildren: () => import('./profesorqr/profesorqr.module').then( m => m.ProfesorqrPageModule)
   },
+  {
+    path: 'error-page',
+    loadChildren: () => import('./error-page/error-page.module').then( m => m.ErrorPagePageModule)
+  },
 ];
 
 @NgModule({
