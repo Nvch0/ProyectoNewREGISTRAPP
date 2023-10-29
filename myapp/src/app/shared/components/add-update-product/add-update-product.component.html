@@ -1,7 +1,7 @@
 <app-header [isModal]="true" Title="Registrar"></app-header>
 <ion-content>
 
-    <form [formGroup]="form" class="ion-padding ion-text-center" (ngSubmit)="submit()" (keypress.enter)="submit()">
+    <form [formGroup]="form" class="ion-padding ion-text-center" (ngSubmit)="submit()" >
 
     
     <!--//=======================NOMBRE========================-->
@@ -69,7 +69,11 @@
       </ion-select>
     </ion-item>
 
-    <ion-button (click)="goToHome()"> profe </ion-button>
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="goToHome()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
     
     
     
