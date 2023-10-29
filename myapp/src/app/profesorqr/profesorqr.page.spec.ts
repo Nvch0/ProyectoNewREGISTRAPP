@@ -14,4 +14,5 @@ describe('ProfesorqrPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });
